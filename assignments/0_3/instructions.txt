@@ -1,0 +1,40 @@
+The Assignment:
+You will implement and test the sequence class using an array to store the sequence's items.
+Purposes:
+Ensure that you can write a small class that uses an array as a private member variable.
+Familiarize yourself with the sequence container class (which may also be part of future assignments).
+Give us a chance to evaluate your programming skills on a small class.
+Before Starting:
+Read all of Chapter 3.
+Due Date:
+Wednesday, September 28, 2016 before class. If you have problems, late work will be accepted before Thursday with no penalties. Late work may be submitted on Friday or Saturday with 5% penalty per day. No work will be accepted after Saturday.
+How to Turn In:
+Files to be submitted: source code (*.cxx, *.h) . Please don't send your excutable files. Please submit homeworks using this link. On the upload page, you can select the file(s) you want to submit (multiple files can be selected by pressing down CTRL key while selecting the files). Then enter your last name and the last 4 digit of your student ID (from CUNYfirst, NOT your SSN!!!). Once successfully submitted, it will show a page with RECEIPT NUMBER, save that number or that page because you will need it to retrieve your grade for that assignment. You can submit your assignment as many times as you want before the deadline, only the latest one will be graded.
+
+To retrieve your grade for an assignment (after I finish grading it), please go to the download page here, select the assignment, enter the receipt number for that assignment, your last name and your last 4 digit of your student ID. The page will then download a TXT file which contain your graded submission.
+
+Files that you must write and turn in:
+sequence1.h: The header file for the sequence class. Actually, you don't have to write much of this file. Just start with our version and add your name and other information at the top. Also, decide on appropriate private member variables, an declare these in the sequence class definition at the bottom of the header file If some of your member functions are implemented as inline functions, then you may put those implementations in this file too.
+sequence1.cxx: The implementation file for this first sequence class. You will write all of this file, which will have the implementations of all the sequence's member functions.
+Other files that you may find helpful:
+sequence_test.cxx: A simple interactive test program.
+sequence_exam.cxx: A non-interactive test program that will be used to grade the correctness of your sequence class.
+The sequence Class Using a Fixed-Sized Array
+Discussion of the Assignment
+
+Many of the features of this class are similar to the bag class from Section 3.1, so start by thoroughly reading Section 3.1 and pay attention to new features such as static constant members and the use of a typedef. The sequence class itself is discussed in Section 3.2 of the class text. Notice how the sequence differs from a bag (see page 119). The interactive test program sequence_exam.cxx  is discussed in Section 3.3 of the class text.
+Start by declaring the sequence's private member variables in sequence.h. Then write the invariant of your ADT at the top of sequence1.cxx. The invariant describes precisely how all of your private member variables are used. All of the member functions (except for the constructor) may count on the invariant being true when the member function is activated. And all of the member functions are responsible for ensuring that the invariant is true when the function returns.
+
+As always, do your work in small pieces. For example, my first version of the sequence had only a constructor, start, insert, advance, and current. My other member functions started out as stubs.
+
+Use the interactive test program and a debugger to track down errors in your implementation. If you have an error, do not start making changes until you have identified the cause of the error.
+
+The ability to initialize and use a static member constant within the class definition is a relatively new feature. If you have an older compiler that does not support static const members, then you may use
+
+enum {CAPACITY = 30};
+
+instead of
+
+static const size_type CAPACITY = 30;
+
+After  this definition, the name bag::CAPACITY is defined to have the integer value 30. Although this is not the intended use of an enum definition, the result is the same as using a static member constant (see more discussions at page 99 in the textbook). 
